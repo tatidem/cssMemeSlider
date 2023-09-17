@@ -1,0 +1,137 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    transition: all 0.5s ease-in-out;
+    background-color:#181613;
+    color: #d5b65e;
+    
+}
+
+
+.slider_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    /* width: 111rem; */
+   
+    /* width: 100%; */
+    
+}
+
+.slider {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 500%;
+    
+
+  
+    
+  }
+  
+  /* Стили для каждого слайда */
+  .slide {
+    /* margin: 0 6rem; */
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column;
+    align-items: center; */
+    /* width: 20%; */
+    height: 20%;
+    opacity: 0.5;
+    
+    
+  }
+  
+  /* Стили для изображений в слайде */
+  .slide img {
+    width: 50%;
+    height: 50%;
+  }
+
+  .buttons_text_wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 4rem;
+  }
+
+  .title{
+    font-size: 2rem;
+    text-align: center;
+    line-height: 4rem;
+  }
+ 
+  
+  /* Стили для кнопок пагинации */
+  .buttons {
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .buttons input[type="radio"] {
+    display: none;
+  }
+
+  .controls{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 18rem;
+    height: 4rem;
+    
+  }
+  .bars{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    width: 4rem;
+    height: 4rem;
+  }
+  .controls .bar{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    background-color: #d5b65e;
+  }
+  .controls .bars:hover{
+    cursor: pointer;
+  }  
+  .controls .bar:hover{
+    /* cursor: pointer; */
+    background-color: #804623;
+  }
+  
+
+  
+
+  
+
+  /* .slide.active {
+    opacity: 1;
+  } */
+  
+  /* Стили для активной кнопки пагинации */
+  /* .active label {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 50%;
+    background-color: #333;
+    transition: background-color 0.3s ease-in-out;
+  } */
+  
+  /* Стили для активной кнопки при наведении */
+  /* .active label:hover {
+    background-color: #555;
+  } */
