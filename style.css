@@ -4,7 +4,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
     transition: all 0.5s ease-in-out;
     background-color:#181613;
     color: #d5b65e;
@@ -15,9 +14,10 @@
 .slider_wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 4rem;
+    overflow: hidden;
     /* width: 111rem; */
    
     /* width: 100%; */
@@ -25,10 +25,10 @@
 }
 
 .slider {
-    margin: 0 auto;
+    margin-left: 0;
     display: flex;
     flex-wrap: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 500%;
     
 
@@ -39,7 +39,7 @@
   /* Стили для каждого слайда */
   .slide {
     /* margin: 0 6rem; */
-    /* flex: 0 0 20%; */
+    flex: 0 0 20%;
     display: flex;
     justify-content: center;
     /* flex-direction: column;
@@ -80,7 +80,7 @@
   }
   
   .buttons input[type="radio"] {
-    visibility: hidden;
+    display: none;
   }
 
   .controls{
@@ -98,29 +98,37 @@
     width: 4rem;
     height: 4rem;
   }
-  .controls .bar{
+  .bar{
     width: 2rem;
     height: 2rem;
     border-radius: 2rem;
     background-color: #d5b65e;
   }
-  .controls .bars:hover{
+  .bars:hover{
     cursor: pointer;
   }  
-  .controls .bar:hover{
+  .bar:hover{
     /* cursor: pointer; */
     background-color: #804623;
+   
   }
-  #btn1:checked + label {
-    /* cursor: pointer; */
-    background-color: #804623;
-  }
+
+
+  /* .controls label.bars .bar:checked{
+    background-color: transparent;
+    border: 0.2rem solid #804623;
+} */
+   
+    input[type="radio"]:checked + label .bar{
+    background-color: transparent ;
+    border: 0.2rem solid #804623;
+  } 
   
-  #btn1:checked ~.s1{
+  #btn1:checked + label .bar ~ .slider .s1{
     margin-left: 0;
   }
 
-  #btn2:checked ~.s1{
+  #btn2:checked  ~ .slider .s1{
     margin-left: -20%;
   }
 
