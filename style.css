@@ -28,6 +28,9 @@
     margin-left: 0;
     display: flex;
     flex-wrap: nowrap;
+    /* flex-direction: column; */
+    align-items:normal;
+    /* justify-content: center; */
     /* overflow: hidden; */
     width: 500%;
     
@@ -39,11 +42,13 @@
   /* Стили для каждого слайда */
   .slide {
     /* margin: 0 6rem; */
-    flex: 0 0 20%;
+    /* flex: 0 0 20%; */
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    /* flex-direction: column;
-    align-items: center; */
+    
+    
     width: 20%;
     height: 20%;
     opacity: 0.5;
@@ -57,13 +62,22 @@
     height: 50%;
   }
 
-  .buttons_text_wrapper{
+  .slide caption{
+    /* display: block;
+    margin-right: 20rem; */
+    font-size: 2rem;
+    text-align: center;
+    line-height: 4rem;
+    margin-top: 20rem;
+    margin-left: 20%;
+  }
+  /* .buttons_text_wrapper{
     display: flex;
     justify-content: space-between;
     width: 50%;
     margin-top: 4rem;
     margin-bottom: 10rem;
-  }
+  } */
 
   .title{
     font-size: 2rem;
@@ -128,7 +142,7 @@
     margin-left: 0;
   }
 
-  #btn2:checked  ~ .slider .s1{
+  #btn2:checked + label .bar ~ .slider .s1{
     margin-left: -20%;
   }
 
