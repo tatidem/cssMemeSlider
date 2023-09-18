@@ -19,7 +19,7 @@
     width: 100%;
     margin-top: 4rem;
   
-    /* overflow: hidden; */
+    overflow: hidden; 
    
 }
 
@@ -47,22 +47,20 @@
   }
 
 .text_wrapper{
-  width: 50%;
-  height: 50%;
-  
+    width: 50%;
+    overflow: hidden;
 }
+ 
 
   .text{
-    height: 60%;
-    overflow: hidden;
+    width: 500%;
+    height: 100%;
+    display: flex;
+   
   }
 
-  Ul{
-    height: 10rem;
-    /* overflow: hidden; */
-  } 
 
-  li{
+  .text span{
     font-size: 2rem;
     line-height: 4rem;
     width: 40rem;
@@ -73,18 +71,14 @@
 
  
   .controls_text_wrapper{
-    display: flex;
-    justify-content:space-between;
-    width: 50%;
-    height: 10rem;
-    margin-top: 4rem;
-    margin-bottom: 10rem;
-  } 
-
-  
  
-  
-  /* Стили для кнопок пагинации */
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 50%;
+  }
+   
   .buttons {
     display: flex;
     justify-content: center;
@@ -144,61 +138,47 @@
     border: 0.2rem solid #804623;
   }
 
-  #btn1:checked ~ .slider
-  {
-     margin-left: 400%;
-  }
-  
+  #btn1:checked ~ .slider{
+    margin-left: 400%;
+ }
+
   #btn2:checked ~ .slider{
      margin-left: 200%;
   }
-  #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
-    margin-top: -15%; 
-    
+
+  #btn2:checked ~ .controls_text_wrapper .text_wrapper .text span{
+    transform: translateX(-100%);
   }
+
   
 
   #btn3:checked ~ .slider{
      margin-left: 0;
   }
-  #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
-    margin-top: -25%; 
-  }
 
-  
+  #btn3:checked ~ .controls_text_wrapper .text_wrapper .text span{
+    transform: translateX(-200%);
+  }
+ 
 
 
   #btn4:checked ~ .slider{
      margin-left: -200%;
   }
-  #btn4:checked ~ .controls_text_wrapper .text_wrapper ul {
-    margin-top: -40%;
+
+  #btn4:checked ~ .controls_text_wrapper .text_wrapper .text span{
+    transform: translateX(-300%);
   }
-
-
+ 
 
   #btn5:checked ~ .slider{
      margin-left: -400%;
   }
-  #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
-    margin-top: -50%;
+
+  #btn5:checked ~ .controls_text_wrapper .text_wrapper .text span{
+    transform: translateX(-400%);
   }
 
-  @media (max-width: 1440px){
-  #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
-    margin-top: -20%;
-  } 
-    #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
-      margin-top: -35%; 
-    }
-    #btn4:checked ~ .controls_text_wrapper .text_wrapper ul {
-      margin-top: -50%;
-    }
-    #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
-      margin-top: -70%;
-    }
-  }
-  
 
   @media (max-width: 1024px){
     .slide img {
@@ -207,40 +187,24 @@
       
     }
     .controls_text_wrapper{
-    
       width: 60%;
     }
-    #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
-      margin-top: -20%;
-    } 
-      #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
-        margin-top: -40%; 
-      }
-      #btn4:checked ~ .controls_text_wrapper .text_wrapper ul {
-        margin-top: -60%;
-      }
-      #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
-        margin-top: -78%;
-      }
-
+  
   }
 
   @media (max-width: 768px){
-    #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
-      margin-top: -28%;
-    } 
-      #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
-        margin-top: -53%; 
-      }
-      #btn4:checked ~ .controls_text_wrapper .text_wrapper ul {
-        margin-top: -80%;
-      }
-      #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
-        margin-top: -105%;
-      }
+    .slide img {
+      width: 80%;
+      height: 80%;
+      
+    }
+    .controls_text_wrapper{
+      width: 80%;
+    }
+  
   }
 
-  @media (max-width: 500px){
+  @media (max-width: 560px){
     .controls_text_wrapper {
       flex-direction: column-reverse;
       justify-content: center;
@@ -255,7 +219,7 @@
       text-align: center;
       margin-top: 2rem;
     }
-    #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
+    /* #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
       margin-top: -25%;
     } 
       #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
@@ -266,13 +230,42 @@
       }
       #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
         margin-top: -100%;
-      }
+      } */
 
       .text{
         display: flex;
         justify-content: center;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
       }
+
+      .text span {
+        font-size: 1.5rem;
+        line-height: 3rem;
+        width: 40rem;
+        list-style-type: none;
+        height: 6rem;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 15rem;
+      height: 4rem;
+  }
+  .bars {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+}
+  .bar {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: #d5b65e;
+  }
   }
  
   
