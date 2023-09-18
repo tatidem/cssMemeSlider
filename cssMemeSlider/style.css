@@ -16,74 +16,72 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     margin-top: 4rem;
-    overflow: hidden;
-    /* width: 111rem; */
+  
+    /* overflow: hidden; */
    
-    /* width: 100%; */
-    
 }
 
 .slider {
     margin-left: 0;
     display: flex;
     flex-wrap: nowrap;
-    /* flex-direction: column; */
-    align-items:normal;
-    /* justify-content: center; */
-    /* overflow: hidden; */
+    align-items:center;
+    overflow: hidden;
     width: 500%;
-    
-
   
-    
   }
   
-  /* Стили для каждого слайда */
+
   .slide {
-    /* margin: 0 6rem; */
-    /* flex: 0 0 20%; */
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    
-    
     width: 20%;
     height: 20%;
-    opacity: 0.5;
-    
-    
   }
   
-  /* Стили для изображений в слайде */
   .slide img {
     width: 50%;
     height: 50%;
   }
 
-  .slide caption{
-    /* display: block;
-    margin-right: 20rem; */
-    font-size: 2rem;
-    text-align: center;
-    line-height: 4rem;
-    margin-top: 20rem;
-    margin-left: 20%;
+.text_wrapper{
+  width: 50%;
+  height: 50%;
+  
+}
+
+  .text{
+    height: 60%;
+    overflow: hidden;
   }
-  /* .buttons_text_wrapper{
+
+  Ul{
+    height: 10rem;
+    /* overflow: hidden; */
+  } 
+
+  li{
+    font-size: 2rem;
+    line-height: 4rem;
+    width: 40rem;
+    list-style-type: none;
+    height: 6rem;
+    
+  }
+
+ 
+  .controls_text_wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     width: 50%;
+    height: 10rem;
     margin-top: 4rem;
     margin-bottom: 10rem;
-  } */
+  } 
 
-  .title{
-    font-size: 2rem;
-    text-align: center;
-    line-height: 4rem;
-  }
+  
  
   
   /* Стили для кнопок пагинации */
@@ -93,7 +91,7 @@
     
   }
   
-  .buttons input[type="radio"] {
+  input[type="radio"] {
     display: none;
   }
 
@@ -128,44 +126,154 @@
   }
 
 
-  /* .controls label.bars .bar:checked{
-    background-color: transparent;
-    border: 0.2rem solid #804623;
-} */
-   
-    input[type="radio"]:checked + label .bar{
+  #btn1:checked ~ .controls_text_wrapper .controls label:nth-child(1) .bar,
+  #btn2:checked ~ .controls_text_wrapper .controls label:nth-child(2) .bar,
+  #btn3:checked ~ .controls_text_wrapper .controls label:nth-child(3) .bar,
+  #btn4:checked ~ .controls_text_wrapper .controls label:nth-child(4) .bar,
+  #btn5:checked ~ .controls_text_wrapper .controls label:nth-child(5) .bar{
+    background-color: transparent ;
+    border: 0.2rem solid #d5b65e;
+  }
+
+  #btn1:checked ~ .controls_text_wrapper .controls label:nth-child(1) .bar:hover,
+  #btn2:checked ~ .controls_text_wrapper .controls label:nth-child(2) .bar:hover,
+  #btn3:checked ~ .controls_text_wrapper .controls label:nth-child(3) .bar:hover,
+  #btn4:checked ~ .controls_text_wrapper .controls label:nth-child(4) .bar:hover,
+  #btn5:checked ~ .controls_text_wrapper .controls label:nth-child(5) .bar:hover{
     background-color: transparent ;
     border: 0.2rem solid #804623;
+  }
+
+  #btn1:checked ~ .slider
+  {
+     margin-left: 400%;
+  }
+  
+  #btn2:checked ~ .slider{
+     margin-left: 200%;
+  }
+  #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
+    margin-top: -15%; 
+    
+  }
+  
+
+  #btn3:checked ~ .slider{
+     margin-left: 0;
+  }
+  #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
+    margin-top: -25%; 
+  }
+
+  
+
+
+  #btn4:checked ~ .slider{
+     margin-left: -200%;
+  }
+  #btn4:checked ~ .controls_text_wrapper .text_wrapper ul {
+    margin-top: -40%;
+  }
+
+
+
+  #btn5:checked ~ .slider{
+     margin-left: -400%;
+  }
+  #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
+    margin-top: -50%;
+  }
+
+  @media (max-width: 1440px){
+  #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
+    margin-top: -20%;
   } 
+    #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
+      margin-top: -35%; 
+    }
+    #btn4:checked ~ .controls_text_wrapper .text_wrapper ul {
+      margin-top: -50%;
+    }
+    #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
+      margin-top: -70%;
+    }
+  }
   
-  #btn1:checked + label .bar ~ .slider .s1{
-    margin-left: 0;
+
+  @media (max-width: 1024px){
+    .slide img {
+      width: 60%;
+      height: 60%;
+      
+    }
+    .controls_text_wrapper{
+    
+      width: 60%;
+    }
+    #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
+      margin-top: -20%;
+    } 
+      #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
+        margin-top: -40%; 
+      }
+      #btn4:checked ~ .controls_text_wrapper .text_wrapper ul {
+        margin-top: -60%;
+      }
+      #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
+        margin-top: -78%;
+      }
+
   }
 
-  #btn2:checked + label .bar ~ .slider .s1{
-    margin-left: -20%;
+  @media (max-width: 768px){
+    #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
+      margin-top: -28%;
+    } 
+      #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
+        margin-top: -53%; 
+      }
+      #btn4:checked ~ .controls_text_wrapper .text_wrapper ul {
+        margin-top: -80%;
+      }
+      #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
+        margin-top: -105%;
+      }
   }
 
+  @media (max-width: 500px){
+    .controls_text_wrapper {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+    }
+    
+    .controls_text_wrapper{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    #btn2:checked ~ .controls_text_wrapper .text_wrapper ul {
+      margin-top: -25%;
+    } 
+      #btn3:checked ~ .controls_text_wrapper .text_wrapper ul {
+        margin-top: -53%; 
+      }
+      #btn4:checked ~ .controls_text_wrapper .text_wrapper ul {
+        margin-top: -75%;
+      }
+      #btn5:checked ~ .controls_text_wrapper .text_wrapper ul {
+        margin-top: -100%;
+      }
+
+      .text{
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+  }
+ 
   
 
-  
-
-  /* .slide.active {
-    opacity: 1;
-  } */
-  
-  /* Стили для активной кнопки пагинации */
-  /* .active label {
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 50%;
-    background-color: #333;
-    transition: background-color 0.3s ease-in-out;
-  } */
-  
-  /* Стили для активной кнопки при наведении */
-  /* .active label:hover {
-    background-color: #555;
-  } */
